@@ -63,11 +63,6 @@
   .icon {
     width: 22px;
     height: 22px;
-    fill: none;
-    stroke: currentColor;
-    stroke-width: 2;
-    stroke-linecap: round;
-    stroke-linejoin: round;
     flex-shrink: 0;
   }
 
@@ -105,62 +100,28 @@
   }
   .menu-btn:hover { background: var(--primary-light); }
 
+  /* ===== لوگو (فقط آیکون) ===== */
   .logo-box {
     display: flex;
     align-items: center;
-    gap: 12px;
     text-decoration: none;
-    color: var(--text);
+    color: var(--primary-dark);
+    transition: all 0.3s;
   }
 
-  /* ===== لوگوی SVG ===== */
-  .logo-svg-wrap {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    position: relative;
-}
-
-  .logo-svg-wrap::before {
-    content: '';
-    position: absolute;
-    top: -50%; left: -50%;
-    width: 200%; height: 200%;
-    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.25) 50%, transparent 70%);
-    animation: logoShine 3s linear infinite;
-  }
-
-  @keyframes logoShine {
-    0% { transform: translateX(-100%) rotate(45deg); }
-    100% { transform: translateX(100%) rotate(45deg); }
+  .logo-box:hover {
+    color: var(--primary);
+    transform: scale(1.05);
   }
 
   .logo-svg {
-    width: 50px;
-    height: 50px;
-    position: relative;
-    z-index: 1;
-    color: #d97706;
-}
-
-.logo-svg use {
-    fill: currentColor;
-}
-
-  .logo-text {
-    font-weight: 900;
-    font-size: 1.15rem;
-    color: var(--primary-dark);
-    line-height: 1.2;
-  }
-  .logo-text small {
+    width: 48px;
+    height: 48px;
     display: block;
-    font-size: 0.7rem;
-    color: var(--text-light);
-    font-weight: 400;
+  }
+
+  .logo-svg path {
+    fill: currentColor;
   }
 
   /* ===== جستجو ===== */
@@ -309,11 +270,11 @@
     border-radius: 3px;
   }
 
-  /* ===== دکمه پین (سنجاق) وسط ===== */
+  /* ===== دکمه پین (وسط بالا) ===== */
   .sidebar-pin-wrap {
     display: flex;
     justify-content: center;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border);
   }
@@ -385,7 +346,6 @@
   .sidebar-link .icon {
     width: 22px;
     height: 22px;
-    flex-shrink: 0;
   }
 
   /* ===== متن و شمارنده — مخفی در حالت مینیمال ===== */
@@ -718,7 +678,6 @@
   }
 
   @media (max-width: 500px) {
-    .logo-text { display: none; }
     .topbar { padding: 0 12px; }
   }
 
@@ -739,41 +698,47 @@
 <body>
 
 <!-- ============================================
-     📦 آیکون‌های SVG (اینلاین)
+     📦 آیکون‌های SVG
      ============================================ -->
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
-  <!-- لوگوی اصلی کاربر -->
-  <symbol id="icon-logo" viewBox="-100 -40 100 40">
-    <path d="M 0 -9 L 0 -22 L -10 -22 L -10 0 L -9 0 Q 0 0 0 -9 Z"/>
-    <path d="M -12 0 L -12 -22 L -22 -22 L -22 0 L -12 0 Z"/>
-    <path d="M -24 -22 L -46 -22 L -46 -12 L -34 -12 L -34 -10 L -46 -10 L -46 0 L -24 0 L -24 -22 Z"/>
-    <path d="M -48 0 L -48 -24 L 0 -24 L 0 -25 Q 0 -34 -9 -34 L -58 -34 L -58 -10 L -60 -10 L -60 -22 L -82 -22 L -82 -12 L -70 -12 L -70 0 L -48 0 Z"/>
-    <path d="M -72 0 L -72 -10 L -94 -10 L -94 -9 Q -94 0 -85 0 L -72 0 Z"/>
-    <path d="M -84 -12 L -84 -24 L -60 -24 L -60 -34 L -85 -34 Q -94 -34 -94 -25 L -94 -12 L -84 -12 Z"/>
+  
+  <!-- لوگو -->
+  <symbol id="icon-logo" viewBox="0 0 100 40">
+    <path d="M 0 9 L 0 22 L 10 22 L 10 0 L 9 0 Q 0 0 0 9 Z" transform="translate(100,0) scale(-1,1)"/>
+    <path d="M 12 0 L 12 22 L 22 22 L 22 0 L 12 0 Z" transform="translate(100,0) scale(-1,1)"/>
+    <path d="M 24 22 L 46 22 L 46 12 L 34 12 L 34 10 L 46 10 L 46 0 L 24 0 L 24 22 Z" transform="translate(100,0) scale(-1,1)"/>
+    <path d="M 48 0 L 48 24 L 0 24 L 0 25 Q 0 34 9 34 L 58 34 L 58 10 L 60 10 L 60 22 L 82 22 L 82 12 L 70 12 L 70 0 L 48 0 Z" transform="translate(100,0) scale(-1,1)"/>
+    <path d="M 72 0 L 72 10 L 94 10 L 94 9 Q 94 0 85 0 L 72 0 Z" transform="translate(100,0) scale(-1,1)"/>
+    <path d="M 84 12 L 84 24 L 60 24 L 60 34 L 85 34 Q 94 34 94 25 L 94 12 L 84 12 Z" transform="translate(100,0) scale(-1,1)"/>
   </symbol>
 
   <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
     <polyline points="9 22 9 12 15 12 15 22"></polyline>
   </symbol>
+
   <symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
     <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
   </symbol>
+
   <symbol id="icon-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
   </symbol>
+
   <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="10"></circle>
     <circle cx="12" cy="12" r="6"></circle>
     <circle cx="12" cy="12" r="2"></circle>
   </symbol>
+
   <symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M3 3v18h18"></path>
     <path d="M18 17V9"></path>
     <path d="M13 17V5"></path>
     <path d="M8 17v-3"></path>
   </symbol>
+
   <symbol id="icon-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
     <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
@@ -781,6 +746,7 @@
     <path d="M16 13H8"></path>
     <path d="M16 17H8"></path>
   </symbol>
+
   <symbol id="icon-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <rect width="16" height="20" x="4" y="2" rx="2"></rect>
     <line x1="8" x2="16" y1="6" y2="6"></line>
@@ -793,24 +759,30 @@
     <path d="M12 18h.01"></path>
     <path d="M8 18h.01"></path>
   </symbol>
+
   <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
   </symbol>
+
   <symbol id="icon-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
     <circle cx="12" cy="12" r="3"></circle>
   </symbol>
+
   <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="11" cy="11" r="8"></circle>
     <path d="m21 21-4.3-4.3"></path>
   </symbol>
+
   <symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
     <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
   </symbol>
+
   <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
   </symbol>
+
   <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <circle cx="12" cy="12" r="4"></circle>
     <path d="M12 2v2"></path>
@@ -822,20 +794,20 @@
     <path d="m6.34 17.66-1.41 1.41"></path>
     <path d="m19.07 4.93-1.41 1.41"></path>
   </symbol>
+
   <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <line x1="4" x2="20" y1="12" y2="12"></line>
     <line x1="4" x2="20" y1="6" y2="6"></line>
     <line x1="4" x2="20" y1="18" y2="18"></line>
   </symbol>
+
   <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <line x1="12" x2="12" y1="17" y2="22"></line>
     <path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path>
   </symbol>
+
   <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
-  </symbol>
-  <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="m15 18-6-6 6-6"></path>
   </symbol>
 </svg>
 
@@ -848,11 +820,9 @@
       <svg class="icon"><use href="#icon-menu"></use></svg>
     </button>
     <a href="#home" class="logo-box">
-      <div class="logo-svg-wrap">
-        <svg class="logo-svg" viewBox="-100 -40 100 40">
-          <use href="#icon-logo"></use>
-        </svg>
-      </div>
+      <svg class="logo-svg" viewBox="0 0 100 40">
+        <use href="#icon-logo"></use>
+      </svg>
     </a>
   </div>
 
@@ -893,19 +863,14 @@
      ============================================ -->
 <div class="layout">
 
-  <!-- ============================================
-       📚 SIDEBAR — مینیمال
-       ============================================ -->
   <aside class="sidebar" id="sidebar">
     
-    <!-- دکمه پین (وسط) -->
     <div class="sidebar-pin-wrap">
       <button class="sidebar-pin" id="pinBtn" onclick="togglePin()" title="قفل کردن سایدبار">
         <svg class="icon"><use href="#icon-pin"></use></svg>
       </button>
     </div>
 
-    <!-- بخش اصلی -->
     <div class="sidebar-section">
       <a href="#home" class="sidebar-link active" data-tooltip="خانه">
         <svg class="icon"><use href="#icon-home"></use></svg>
@@ -925,7 +890,6 @@
 
     <div class="sidebar-divider"></div>
 
-    <!-- بخش آموزشی -->
     <div class="sidebar-section">
       <a href="#exams" class="sidebar-link" data-tooltip="آزمون‌ها">
         <svg class="icon"><use href="#icon-target"></use></svg>
@@ -943,7 +907,6 @@
 
     <div class="sidebar-divider"></div>
 
-    <!-- بخش ابزارها -->
     <div class="sidebar-section">
       <a href="#calculator" class="sidebar-link" data-tooltip="ماشین‌حساب">
         <svg class="icon"><use href="#icon-calculator"></use></svg>
@@ -961,9 +924,6 @@
 
   </aside>
 
-  <!-- ============================================
-       📄 MAIN CONTENT
-       ============================================ -->
   <main class="main" id="mainContent"></main>
 
 </div>
@@ -1092,7 +1052,7 @@ if (localStorage.getItem('theme') === 'dark') {
 }
 
 /* ============================================
-   📌 پین کردن سایدبار
+   📌 پین
    ============================================ */
 function togglePin() {
   document.body.classList.toggle('sidebar-locked');
