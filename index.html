@@ -118,12 +118,18 @@
     width: 48px;
     height: 48px;
     display: block;
-  }
+    color: var(--primary);      /* رنگ کهربایی */
+    transition: color 0.3s;
+    direction: ltr;              /* مهم: جلوگیری از آینه شدن */
+}
 
-  .logo-svg path {
+.logo-box:hover .logo-svg {
+    color: var(--primary-dark);
+}
+
+.logo-svg path {
     fill: currentColor;
-  }
-
+}
   /* ===== جستجو ===== */
   .topbar-center {
     flex: 1;
@@ -703,14 +709,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
   
   <!-- لوگو -->
-  <symbol id="icon-logo" viewBox="0 0 100 40">
-    <path d="M 0 9 L 0 22 L 10 22 L 10 0 L 9 0 Q 0 0 0 9 Z" transform="translate(100,0) scale(-1,1)"/>
-    <path d="M 12 0 L 12 22 L 22 22 L 22 0 L 12 0 Z" transform="translate(100,0) scale(-1,1)"/>
-    <path d="M 24 22 L 46 22 L 46 12 L 34 12 L 34 10 L 46 10 L 46 0 L 24 0 L 24 22 Z" transform="translate(100,0) scale(-1,1)"/>
-    <path d="M 48 0 L 48 24 L 0 24 L 0 25 Q 0 34 9 34 L 58 34 L 58 10 L 60 10 L 60 22 L 82 22 L 82 12 L 70 12 L 70 0 L 48 0 Z" transform="translate(100,0) scale(-1,1)"/>
-    <path d="M 72 0 L 72 10 L 94 10 L 94 9 Q 94 0 85 0 L 72 0 Z" transform="translate(100,0) scale(-1,1)"/>
-    <path d="M 84 12 L 84 24 L 60 24 L 60 34 L 85 34 Q 94 34 94 25 L 94 12 L 84 12 Z" transform="translate(100,0) scale(-1,1)"/>
-  </symbol>
+  <symbol id="icon-logo" viewBox="-100 -40 100 40">
+    <path d="M 0 -9 L 0 -22 L -10 -22 L -10 0 L -9 0 Q 0 0 0 -9 Z"/>
+    <path d="M -12 0 L -12 -22 L -22 -22 L -22 0 L -12 0 Z"/>
+    <path d="M -24 -22 L -46 -22 L -46 -12 L -34 -12 L -34 -10 L -46 -10 L -46 0 L -24 0 L -24 -22 Z"/>
+    <path d="M -48 0 L -48 -24 L 0 -24 L 0 -25 Q 0 -34 -9 -34 L -58 -34 L -58 -10 L -60 -10 L -60 -22 L -82 -22 L -82 -12 L -70 -12 L -70 0 L -48 0 Z"/>
+    <path d="M -72 0 L -72 -10 L -94 -10 L -94 -9 Q -94 0 -85 0 L -72 0 Z"/>
+    <path d="M -84 -12 L -84 -24 L -60 -24 L -60 -34 L -85 -34 Q -94 -34 -94 -25 L -94 -12 L -84 -12 Z"/>
+</symbol>
 
   <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
