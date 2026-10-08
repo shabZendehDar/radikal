@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>درسنامه — رادیکال</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ===== محل قرارگیری آیکون‌ها ===== -->
+<div id="icons-container"></div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="topbar-right">
+    <button class="menu-btn" onclick="toggleSidebar()">
+      <svg class="icon"><use href="#icon-menu"></use></svg>
+    </button>
+    <a href="index.html" class="logo-box">
+      <svg class="logo-svg" viewBox="-100 -40 105 45" xmlns="http://www.w3.org/2000/svg">
+        <g class="logo-main" opacity="0.55">
+          <path class="letter-1" d="M 0 -9 L 0 -22 L -10 -22 L -10 0 L -9 0 Q 0 0 0 -9 Z"/>
+          <path class="letter-2" d="M -12 0 L -12 -22 L -22 -22 L -22 0 L -12 0 Z"/>
+          <path class="letter-3" d="M -24 -22 L -46 -22 L -46 -12 L -34 -12 L -34 -10 L -46 -10 L -46 0 L -24 0 L -24 -22 Z"/>
+        </g>
+        <path class="letter-4 logo-main" d="M -48 0 L -48 -24 L 0 -24 L 0 -25 Q 0 -34 -9 -34 L -58 -34 L -58 -10 L -60 -10 L -60 -22 L -82 -22 L -82 -12 L -70 -12 L -70 0 L -48 0 Z"/>
+        <g class="logo-main" opacity="0.55">
+          <path class="letter-5" d="M -72 0 L -72 -10 L -94 -10 L -94 -9 Q -94 0 -85 0 L -72 0 Z"/>
+          <path class="letter-6" d="M -84 -12 L -84 -24 L -60 -24 L -60 -34 L -85 -34 Q -94 -34 -94 -25 L -94 -12 L -84 -12 Z"/>
+        </g>
+      </svg>
+    </a>
+  </div>
+
+  <div class="topbar-center">
+    <div class="search-wrapper">
+      <svg class="icon"><use href="#icon-search"></use></svg>
+      <input type="text" class="search-input" placeholder="جستجو در درس‌ها...">
+    </div>
+  </div>
+
+  <div class="topbar-left">
+    <button class="icon-btn" title="علاقه‌مندی‌ها">
+      <svg class="icon"><use href="#icon-star"></use></svg>
+    </button>
+    <button class="icon-btn" title="اعلان‌ها">
+      <svg class="icon"><use href="#icon-bell"></use></svg>
+      <span class="badge"></span>
+    </button>
+    <button class="icon-btn" onclick="toggleTheme()" id="themeBtn">
+      <svg class="icon" id="themeIcon"><use href="#icon-moon"></use></svg>
+    </button>
+    <div class="user-avatar">ر</div>
+  </div>
+</div>
+
+<!-- ===== PROGRESS BAR ===== -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ===== OVERLAY (Mobile) ===== -->
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<!-- ===== LAYOUT ===== -->
+<div class="layout">
+
+  <!-- ===== SIDEBAR ===== -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-pin-wrap">
+      <button class="sidebar-pin" id="pinBtn" onclick="togglePin()" title="قفل کردن سایدبار">
+        <svg class="icon"><use href="#icon-pin"></use></svg>
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <a href="index.html" class="sidebar-link" data-tooltip="خانه">
+        <svg class="icon"><use href="#icon-home"></use></svg>
+        <span class="text">خانه</span>
+      </a>
+      <a href="lessons.html" class="sidebar-link active" data-tooltip="درسنامه">
+        <svg class="icon"><use href="#icon-book"></use></svg>
+        <span class="text">درسنامه</span>
+        <span class="count">۲۸</span>
+      </a>
+      <a href="#" class="sidebar-link" data-tooltip="تمرین‌ها">
+        <svg class="icon"><use href="#icon-pencil"></use></svg>
+        <span class="text">تمرین‌ها</span>
+        <span class="count">۱۸۰</span>
+      </a>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-link" data-tooltip="آزمون‌ها">
+        <svg class="icon"><use href="#icon-target"></use></svg>
+        <span class="text">آزمون‌ها</span>
+      </a>
+      <a href="#" class="sidebar-link" data-tooltip="آنالیز و پیشرفت">
+        <svg class="icon"><use href="#icon-chart"></use></svg>
+        <span class="text">آنالیز و پیشرفت</span>
+      </a>
+      <a href="#" class="sidebar-link" data-tooltip="فرمول‌نامه">
+        <svg class="icon"><use href="#icon-file-text"></use></svg>
+        <span class="text">فرمول‌نامه</span>
+      </a>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <a href="#" class="sidebar-link" data-tooltip="ماشین‌حساب">
+        <svg class="icon"><use href="#icon-calculator"></use></svg>
+        <span class="text">ماشین‌حساب</span>
+      </a>
+      <a href="#" class="sidebar-link" data-tooltip="علاقه‌مندی‌ها">
+        <svg class="icon"><use href="#icon-star"></use></svg>
+        <span class="text">علاقه‌مندی‌ها</span>
+      </a>
+      <a href="#" class="sidebar-link" data-tooltip="تنظیمات">
+        <svg class="icon"><use href="#icon-settings"></use></svg>
+        <span class="text">تنظیمات</span>
+      </a>
+    </div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main class="main" id="mainContent"></main>
+
+</div>
+
+<!-- ===== اسکریپت‌ها ===== -->
+<script src="js/chapters.js"></script>
+<script src="js/content-ch1.js"></script>
+<script src="js/content-ch2.js"></script>
+<script src="js/content-ch3.js"></script>
+<script src="js/content-ch4.js"></script>
+<script src="js/content-ch5.js"></script>
+<script src="js/content-ch6.js"></script>
+<script src="js/content-ch7.js"></script>
+<script src="js/content-ch8.js"></script>
+<script src="js/main.js"></script>
+
+<!-- ===== لود آیکون‌ها ===== -->
+<script>
+  fetch('icons.svg')
+    .then(r => r.text())
+    .then(svg => {
+      document.getElementById('icons-container').innerHTML = svg;
+    })
+    .catch(err => console.warn('آیکون‌ها لود نشدند:', err));
+</script>
+
+</body>
+</html>
