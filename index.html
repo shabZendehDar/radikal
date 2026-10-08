@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>رادیکال — ریاضی نهم</title>
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+<!-- ============================================
+     📦 آیکون‌های SVG
+     ============================================ -->
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  
+  <!-- لوگو -->
+  <symbol id="icon-logo" viewBox="0 0 100 40">
+    <path d="M 100 9 L 100 22 L 90 22 L 90 0 L 91 0 Q 100 0 100 9 Z"/>
+    <path d="M 88 0 L 88 22 L 78 22 L 78 0 L 88 0 Z"/>
+    <path d="M 76 22 L 54 22 L 54 12 L 66 12 L 66 10 L 54 10 L 54 0 L 76 0 L 76 22 Z"/>
+    <path d="M 52 0 L 52 24 L 100 24 L 100 25 Q 100 34 91 34 L 42 34 L 42 10 L 40 10 L 40 22 L 18 22 L 18 12 L 30 12 L 30 0 L 52 0 Z"/>
+    <path d="M 28 0 L 28 10 L 6 10 L 6 9 Q 6 0 15 0 L 28 0 Z"/>
+    <path d="M 16 12 L 16 24 L 40 24 L 40 34 L 15 34 Q 6 34 6 25 L 6 12 L 16 12 Z"/>
+  </symbol>
+
+  <!-- ناوبری -->
+  <symbol id="icon-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+    <polyline points="9 22 9 12 15 12 15 22"></polyline>
+  </symbol>
+
+  <symbol id="icon-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"></path>
+    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"></path>
+  </symbol>
+
+  <symbol id="icon-pencil" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M17 3a2.85 2.83 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5Z"></path>
+  </symbol>
+
+  <symbol id="icon-target" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"></circle>
+    <circle cx="12" cy="12" r="6"></circle>
+    <circle cx="12" cy="12" r="2"></circle>
+  </symbol>
+
+  <symbol id="icon-chart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M3 3v18h18"></path>
+    <path d="M18 17V9"></path>
+    <path d="M13 17V5"></path>
+    <path d="M8 17v-3"></path>
+  </symbol>
+
+  <symbol id="icon-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path>
+    <path d="M14 2v4a2 2 0 0 0 2 2h4"></path>
+    <path d="M10 9H8"></path>
+    <path d="M16 13H8"></path>
+    <path d="M16 17H8"></path>
+  </symbol>
+
+  <symbol id="icon-calculator" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect width="16" height="20" x="4" y="2" rx="2"></rect>
+    <line x1="8" x2="16" y1="6" y2="6"></line>
+    <line x1="16" x2="16" y1="14" y2="18"></line>
+    <path d="M16 10h.01"></path>
+    <path d="M12 10h.01"></path>
+    <path d="M8 10h.01"></path>
+    <path d="M12 14h.01"></path>
+    <path d="M8 14h.01"></path>
+    <path d="M12 18h.01"></path>
+    <path d="M8 18h.01"></path>
+  </symbol>
+
+  <symbol id="icon-star" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+  </symbol>
+
+  <symbol id="icon-settings" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+    <circle cx="12" cy="12" r="3"></circle>
+  </symbol>
+
+  <!-- نوار بالا -->
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"></circle>
+    <path d="m21 21-4.3-4.3"></path>
+  </symbol>
+
+  <symbol id="icon-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"></path>
+    <path d="M10.3 21a1.94 1.94 0 0 0 3.4 0"></path>
+  </symbol>
+
+  <symbol id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path>
+  </symbol>
+
+  <symbol id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="4"></circle>
+    <path d="M12 2v2"></path>
+    <path d="M12 20v2"></path>
+    <path d="m4.93 4.93 1.41 1.41"></path>
+    <path d="m17.66 17.66 1.41 1.41"></path>
+    <path d="M2 12h2"></path>
+    <path d="M20 12h2"></path>
+    <path d="m6.34 17.66-1.41 1.41"></path>
+    <path d="m19.07 4.93-1.41 1.41"></path>
+  </symbol>
+
+  <symbol id="icon-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="4" x2="20" y1="12" y2="12"></line>
+    <line x1="4" x2="20" y1="6" y2="6"></line>
+    <line x1="4" x2="20" y1="18" y2="18"></line>
+  </symbol>
+
+  <symbol id="icon-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <line x1="12" x2="12" y1="17" y2="22"></line>
+    <path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"></path>
+  </symbol>
+
+  <symbol id="icon-flame" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path>
+  </symbol>
+
+  <!-- اضافی (برای صفحه درسنامه) -->
+  <symbol id="icon-chevron-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m6 9 6 6 6-6"></path>
+  </symbol>
+
+  <symbol id="icon-chevron-left" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m15 18-6-6 6-6"></path>
+  </symbol>
+</svg>
+
+<!-- ============================================
+     🔝 TOP BAR
+     ============================================ -->
+<div class="topbar">
+  <div class="topbar-right">
+    <button class="menu-btn" onclick="toggleSidebar()">
+      <svg class="icon"><use href="#icon-menu"></use></svg>
+    </button>
+    <a href="#home" class="logo-box">
+      <svg class="logo-svg" viewBox="0 0 100 40">
+        <use href="#icon-logo"></use>
+      </svg>
+    </a>
+  </div>
+
+  <div class="topbar-center">
+    <div class="search-wrapper">
+      <svg class="icon"><use href="#icon-search"></use></svg>
+      <input type="text" class="search-input" placeholder="جستجو در درس‌ها، فرمول‌ها، تمرین‌ها...">
+    </div>
+  </div>
+
+  <div class="topbar-left">
+    <button class="icon-btn" title="علاقه‌مندی‌ها">
+      <svg class="icon"><use href="#icon-star"></use></svg>
+    </button>
+    <button class="icon-btn" title="اعلان‌ها">
+      <svg class="icon"><use href="#icon-bell"></use></svg>
+      <span class="badge"></span>
+    </button>
+    <button class="icon-btn" onclick="toggleTheme()" id="themeBtn">
+      <svg class="icon" id="themeIcon"><use href="#icon-moon"></use></svg>
+    </button>
+    <div class="user-avatar">ر</div>
+  </div>
+</div>
+
+<!-- ============================================
+     📊 PROGRESS BAR
+     ============================================ -->
+<div class="progress-bar" id="progressBar"></div>
+
+<!-- ============================================
+     🌫️ OVERLAY
+     ============================================ -->
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<!-- ============================================
+     📐 LAYOUT
+     ============================================ -->
+<div class="layout">
+
+  <aside class="sidebar" id="sidebar">
+    
+    <div class="sidebar-pin-wrap">
+      <button class="sidebar-pin" id="pinBtn" onclick="togglePin()" title="قفل کردن سایدبار">
+        <svg class="icon"><use href="#icon-pin"></use></svg>
+      </button>
+    </div>
+
+    <div class="sidebar-section">
+      <a href="#home" class="sidebar-link active" data-tooltip="خانه">
+        <svg class="icon"><use href="#icon-home"></use></svg>
+        <span class="text">خانه</span>
+      </a>
+      <a href="#lessons" class="sidebar-link" data-tooltip="درسنامه">
+        <svg class="icon"><use href="#icon-book"></use></svg>
+        <span class="text">درسنامه</span>
+        <span class="count">۲۴</span>
+      </a>
+      <a href="#practice" class="sidebar-link" data-tooltip="تمرین‌ها">
+        <svg class="icon"><use href="#icon-pencil"></use></svg>
+        <span class="text">تمرین‌ها</span>
+        <span class="count">۱۸۰</span>
+      </a>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <a href="#exams" class="sidebar-link" data-tooltip="آزمون‌ها">
+        <svg class="icon"><use href="#icon-target"></use></svg>
+        <span class="text">آزمون‌ها</span>
+      </a>
+      <a href="#analysis" class="sidebar-link" data-tooltip="آنالیز و پیشرفت">
+        <svg class="icon"><use href="#icon-chart"></use></svg>
+        <span class="text">آنالیز و پیشرفت</span>
+      </a>
+      <a href="#formulas" class="sidebar-link" data-tooltip="فرمول‌نامه">
+        <svg class="icon"><use href="#icon-file-text"></use></svg>
+        <span class="text">فرمول‌نامه</span>
+      </a>
+    </div>
+
+    <div class="sidebar-divider"></div>
+
+    <div class="sidebar-section">
+      <a href="#calculator" class="sidebar-link" data-tooltip="ماشین‌حساب">
+        <svg class="icon"><use href="#icon-calculator"></use></svg>
+        <span class="text">ماشین‌حساب</span>
+      </a>
+      <a href="#favorites" class="sidebar-link" data-tooltip="علاقه‌مندی‌ها">
+        <svg class="icon"><use href="#icon-star"></use></svg>
+        <span class="text">علاقه‌مندی‌ها</span>
+      </a>
+      <a href="#settings" class="sidebar-link" data-tooltip="تنظیمات">
+        <svg class="icon"><use href="#icon-settings"></use></svg>
+        <span class="text">تنظیمات</span>
+      </a>
+    </div>
+
+  </aside>
+
+  <main class="main" id="mainContent"></main>
+
+</div>
+
+<script src="js/main.js"></script>
+
+</body>
+</html>
